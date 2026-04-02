@@ -1,0 +1,10 @@
+Main code done by Thegoldenwizard121
+Code for the settings menu done by TChris2
+
+# How to run
+There are two ways to run the project
+1. Running the exe found in the root folder
+2. Running the python file Pngtuber player.py, if running it through the python file you must keep the assets found in the Media folder
+
+# Making your own build
+If you want to make your own changes and make a new build you can run "Py build_exe.py" to make a new build
