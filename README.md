@@ -8,7 +8,7 @@ To adjust clips which clips are played or the interval they play, you can open t
 
 ## How to run
 There are two ways to run the project
-1. Running the exe found in the root folder
+1. Running the exe
 2. Running the python file Pngtuber player.py, if running it through the python file you must keep the assets found in the Media folder
 
 ## Making your own build
