@@ -1,5 +1,6 @@
 Have fun with the silly irish man
-\nTo adjust clips which clips are played or the interval they play, you can open the settings menu by pressing 1
+
+To adjust clips which clips are played or the interval they play, you can open the settings menu by pressing 1
 
 # Credits
 - Main code done by Thegoldenwizard121
