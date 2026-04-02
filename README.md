@@ -1,3 +1,6 @@
+Have fun with the silly irish man
+To adjust clips played open settings menu by pressing 1
+
 Main code done by Thegoldenwizard121
 Code for the settings menu done by TChris2
 
