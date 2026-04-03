@@ -161,7 +161,7 @@ def apply_windows_transparency(hwnd, win_x, win_y):
         print(f"[warn] Could not apply Windows transparency: {e}")
 
 
-def audio_thread_fn(audio_path: str, is_talking: threading.Event):
+def audio_thread_fn(audio_path: str, is_talking: threading.Event, last_audio_time: list):
     """Play the MP3 and keep is_talking set for its duration."""
     try:
         pygame.mixer.music.load(audio_path)
@@ -173,6 +173,7 @@ def audio_thread_fn(audio_path: str, is_talking: threading.Event):
         print(f"[error] Audio playback failed: {e}")
     finally:
         is_talking.clear()
+        last_audio_time[0] = time.time()  
 
 
 def main():
@@ -232,7 +233,7 @@ def main():
     last_played_audio: str | None = None
 
     is_talking      = threading.Event()
-    last_audio_time = -AUDIO_INTERVAL  
+    last_audio_time = [-AUDIO_INTERVAL]
 
     CHROMA_KEY = (255, 0, 255)
 
@@ -259,15 +260,14 @@ def main():
         now = time.time()
 
         if audio_ok and not is_talking.is_set() \
-                and (now - last_audio_time >= AUDIO_INTERVAL):
-            last_audio_time = now
+                and (now - last_audio_time[0] >= AUDIO_INTERVAL):
             if not audio_queue:
                 audio_queue = build_audio_cycle(audio_files, last_played_audio)
             selected_audio = audio_queue.pop(0)
             last_played_audio = selected_audio
             threading.Thread(
                 target=audio_thread_fn,
-                args=(selected_audio, is_talking),
+                args=(selected_audio, is_talking, last_audio_time),
                 daemon=True
             ).start()
 
