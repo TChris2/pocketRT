@@ -9,15 +9,13 @@ To adjust clips which clips are played or the interval they play, you can open t
 ## How to run
 There are two ways to run the project
 1. Running the exe
-2. Running the python file Pngtuber player.py, if running it through the python file you must keep the assets found in the Media folder
+2. Running the python file Pngtuber player.py (**Note** you will need to install all the python libraries used when doing so), if running it through the python file you must keep the assets found in the Media folder
 
 ## Adding new clips
 To add new clips to project you can either add the mp3s to the existing folders in the Media listed in the ALL_CLIPTYPES var or if you want to create a new folder and toggle for the new clips, create the new folder in the Media folder and then add its name to ALL_CLIPTYPES so it can recognize the new folder. **Note** if you want to make this new version run as an exe you will have to make a new build of it.
 
 ## Making your own build
 If you want to make your own changes and make a new build you can run "Py build_exe.py" to make a new build
-
-
 
 
 
